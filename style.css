@@ -38,3 +38,15 @@ h1{
   float: left;
   margin-bottom: 30px;
 }
+
+ul{
+  margin: 0px;
+  padding: 0px;
+  list-style-type:none
+}
+
+li{
+  padding: 13px;
+  padding-bottom: 3px;
+  border-bottom:1px solid black;
+}
