@@ -41,7 +41,7 @@ function SearchArtist(artist){
 
   var button = document.createElement("button");
   button.classList.add("expandbtn");
-  button.innerHTML = '<i class="fas fa-chevron-right"></i>';
+  button.innerHTML = '>';
   button.addEventListener("click", function(){Expand(artist)});
   newelement.appendChild(button);
 
@@ -53,9 +53,9 @@ function SearchArtist(artist){
 function Expand(artist){
   console.log(artist);
   document.getElementById("popup").style.display = "initial";
-  var addhtml = '<div id="row"><div id="columnleft"><h3>Albums</h3><ul id="albumlist"></ul></div><div id="columnright"><h3>Related Artists</h3><ul id="relatedartistlist"></ul></div>'
+  var addhtml = '<div id="row"><div id="columnleft"><h3>Albums</h3><ul id="albumlist"></ul></div><div id="columnright"><h3>Related Artists</h3><h4>(Click Name to Explore)</h4><ul id="relatedartistlist"></ul></div>'
   document.getElementById("popup").insertAdjacentHTML('afterbegin', addhtml);
-  document.getElementById("popup").insertAdjacentHTML('afterbegin', '<button id="clearbutton"><i class="fas fa-times"></i></button>');
+  document.getElementById("popup").insertAdjacentHTML('afterbegin', '<button id="clearbutton">X</button>');
   document.getElementById("clearbutton").onclick = function(){clear()};
   document.getElementById("popup").insertAdjacentHTML('afterbegin', '<h2>' + artist.artist_name + '</h2>');
   console.log(document.getElementById("popup"));
@@ -90,7 +90,7 @@ function displayAlbum(album){
 
   var albumbutton = document.createElement("button");
   albumbutton.classList.add("expandbtn");
-  albumbutton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+  albumbutton.innerHTML = '>';
   albumbutton.addEventListener("click", function(){AlbumTracks(album)});
   newalbum.appendChild(albumbutton);
 
