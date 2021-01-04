@@ -21,6 +21,10 @@ function doSearch(){
       var response = JSON.parse(this.responseText);
       console.log(response);
 
+      if(document.getElementById("list").getElementsByTagName("li").length != 0){
+        document.getElementById("list").innerHTML = "";
+      };
+
       var artists = response.message.body.artist_list;
       for (i=0; i<artists.length; i++){
         SearchArtist(artists[i].artist);
@@ -28,6 +32,7 @@ function doSearch(){
     }
   }
   artistinput = document.getElementById("form").value;
+  document.getElementById("form").value = "";
   console.log(artistinput);
   xhttp2.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.search?" + "q_artist=" + artistinput + "&apikey=ed3e1dd0dea45b0bd4469a41b8d1bbbc", true);
   xhttp2.send();
@@ -89,7 +94,7 @@ function displayAlbum(album){
   newalbum.id = album.album_id;
 
   var albumbutton = document.createElement("button");
-  albumbutton.classList.add("expandbtn");
+  albumbutton.classList.add("expandalbumbtn");
   albumbutton.innerHTML = '>';
   albumbutton.addEventListener("click", function(){AlbumTracks(album)});
   newalbum.appendChild(albumbutton);
@@ -98,22 +103,33 @@ function displayAlbum(album){
 }
 
 
-
-
 function AlbumTracks(album){
-  var xhttp3 = new XMLHttpRequest();
-  xhttp3.onreadystatechange = function(){
 
-    if (this.readyState == 4 && this.status == 200){
-      var response = JSON.parse(this.responseText);
-      var tracks = response.message.body.track_list;
-      for (i=0; i<tracks.length; i++){
-        document.getElementById(album.album_id).innerHTML += '<p>' + tracks[i].track.track_name + '</p>';
-      }
+  if (document.getElementById(album.album_id).childNodes[1].innerText == "v"){
+    document.getElementById(album.album_id).childNodes[1].innerText = '>'
+    for(i=2; i<document.getElementById(album.album_id).childNodes.length; i++){
+      document.getElementById(album.album_id).childNodes[i].style.display = "none";
     }
   }
-  xhttp3.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/album.tracks.get?" + "album_id=" + album.album_id + "&apikey=ed3e1dd0dea45b0bd4469a41b8d1bbbc", true);
-  xhttp3.send();
+  else{
+    document.getElementById(album.album_id).childNodes[1].innerText = "v";
+
+    var xhttp3 = new XMLHttpRequest();
+    xhttp3.onreadystatechange = function(){
+
+      if (this.readyState == 4 && this.status == 200){
+        var response = JSON.parse(this.responseText);
+        var tracks = response.message.body.track_list;
+        for (i=0; i<tracks.length; i++){
+          var p = document.createElement("p");
+          p.innerText = tracks[i].track.track_name;
+          document.getElementById(album.album_id).appendChild(p);
+        }
+      }
+    }
+    xhttp3.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/album.tracks.get?" + "album_id=" + album.album_id + "&apikey=ed3e1dd0dea45b0bd4469a41b8d1bbbc", true);
+    xhttp3.send();
+  }
 }
 
 

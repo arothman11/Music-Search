@@ -3,6 +3,9 @@ body{
   font-family: 'Lato', sans-serif;
   display: flex;
   text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -185,7 +188,7 @@ p {
   margin: 5px;
 }
 
-#albumlist .expandbtn {
+#albumlist .expandalbumbtn {
   background-color: inherit;
   border: none;
   color: white;
@@ -264,7 +267,8 @@ h4 {
 
 #navigateus h2 {
   position: relative;
-  left: -360px;
+  left: -20%;
+  //make these percentages
 }
 
 #navigateus h3 {
@@ -280,12 +284,12 @@ h4 {
 
 #aboutus h2 {
   position: relative;
-  left: 350px;
+  left: 20%;
 }
 
 #aboutus h3 {
   position: relative;
-  left: 250px;
+  left: 16%;
   top: -10px;
   text-align: right;
 }
