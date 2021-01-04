@@ -1,4 +1,4 @@
-var apikey = "&apikey=82472e0b485f7bfdc333ee02f36bea6c";
+var apikey = "&apikey=ed3e1dd0dea45b0bd4469a41b8d1bbbc";
 var baseurl = "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/"
 var artistinput = "";
 
@@ -29,7 +29,7 @@ function doSearch(){
   }
   artistinput = document.getElementById("form").value;
   console.log(artistinput);
-  xhttp2.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.search?" + "q_artist=" + artistinput + "&apikey=82472e0b485f7bfdc333ee02f36bea6c", true);
+  xhttp2.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.search?" + "q_artist=" + artistinput + "&apikey=ed3e1dd0dea45b0bd4469a41b8d1bbbc", true);
   xhttp2.send();
 }
 
@@ -78,7 +78,7 @@ function getAlbums(artistid){
       }
     }
   }
-  xhttp2.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.albums.get?" + "artist_id=" + artistid + "&apikey=82472e0b485f7bfdc333ee02f36bea6c", true);
+  xhttp2.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.albums.get?" + "artist_id=" + artistid + "&apikey=ed3e1dd0dea45b0bd4469a41b8d1bbbc", true);
   xhttp2.send();
 }
 
@@ -112,7 +112,7 @@ function AlbumTracks(album){
       }
     }
   }
-  xhttp3.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/album.tracks.get?" + "album_id=" + album.album_id + "&apikey=82472e0b485f7bfdc333ee02f36bea6c", true);
+  xhttp3.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/album.tracks.get?" + "album_id=" + album.album_id + "&apikey=ed3e1dd0dea45b0bd4469a41b8d1bbbc", true);
   xhttp3.send();
 }
 
@@ -130,7 +130,7 @@ function relatedArtists(artistid){
       }
     }
   }
-  xhttp3.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.related.get?" + "artist_id=" + artistid + "&apikey=82472e0b485f7bfdc333ee02f36bea6c", true);
+  xhttp3.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.related.get?" + "artist_id=" + artistid + "&apikey=ed3e1dd0dea45b0bd4469a41b8d1bbbc", true);
   xhttp3.send();
 }
 
