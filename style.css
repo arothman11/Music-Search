@@ -212,7 +212,7 @@ h4 {
 #footer {
   position: absolute;
   z-index: -1;
-  bottom:0;
+  bottom: 0;
   width: 100%;
   height: 100px;
 }
@@ -222,14 +222,70 @@ h4 {
   text-align: center;
 }
 
-#footer p {
-  font-family: 'Bangers', cursive;
+#footer h3 {
+  font-family: 'Playfair Display', serif;
   font-size: 23px;
   text-indent: inherit;
+  color: black;
+}
+
+#footerleft {
+  float: left;
+  width: 35%;
+  background-color: inherit;
+  padding: 0px;
+  margin: 0px;
+}
+
+#footerright {
+  float: left;
+  width: 60%;
+  background-color: inherit;
+  padding: 0px;
+  margin: 0px;
+}
+
+#footer h1 {
+  padding: 25px;
+}
+
+#navigateus, #aboutus {
+  color: #242526;
+}
+
+#footerright h2 {
+  font-size: 35px;
+}
+
+#footerright h3 {
+  font-size: 18px;
+  width: 70%;
+}
+
+#navigateus h2 {
+  position: relative;
+  left: -360px;
+}
+
+#navigateus h3 {
+  position: relative;
+  top: 20px;
+  text-align: left;
 }
 
 #aboutus {
-  height: 100px;
-  width: 1000px;
-  margin: auto;
+  position: relative;
+  top: 70px;
+}
+
+#aboutus h2 {
+  position: relative;
+  left: 350px;
+}
+
+#aboutus h3 {
+  position: relative;
+  left: 250px;
+  top: -10px;
+  text-align: right;
 }
