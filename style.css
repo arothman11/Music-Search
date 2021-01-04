@@ -2,8 +2,6 @@ body{
   background-image: linear-gradient(to bottom right, #a8d6eb, #265e78);
   font-family: 'Lato', sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
@@ -45,8 +43,49 @@ ul{
   list-style-type:none
 }
 
-li{
+#list li{
   padding: 13px;
   padding-bottom: 3px;
   border-bottom:1px solid black;
+}
+
+#list li .expandbtn{
+  border: none;
+  background-color: inherit;
+  position: relative;
+  left: 0;
+}
+
+
+#popup{
+  position: fixed;
+  display: none;
+  background-color: black;
+  color: white;
+  top: 40;
+  width: 80%;
+  left: 10%;
+  right: 10%
+
+}
+
+h2{
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+#popup #columnleft, #columnright{
+  float: left;
+}
+
+#popup #columnleft{
+  width: 69%;
+  border-right: 2px solid white;
+  background-color: black;
+}
+
+#popup #columnright{
+  width: 30%;
+  background-color: black;
 }
