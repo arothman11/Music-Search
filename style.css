@@ -1,4 +1,8 @@
-body{
+html, body {
+  height: 100%;
+}
+
+body {
   background-color: #e4e6eb;
   font-family: 'Lato', sans-serif;
   display: flex;
@@ -6,17 +10,39 @@ body{
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  flex-direction: column;
+  height: 100%;
 }
 
-h1 {
-  font-size: 70px;
-  margin-left: 500px;
-  color: #ad3b00;
-  font-family: 'Bangers', cursive;
+@media (min-width: 1251px) {
+  h1 {
+    font-size: 70px;
+    margin-left: 2%;
+    color: #ad3b00;
+    font-family: 'Bangers', cursive;
+  }
 }
 
-.search-box {
-  margin-left: 560px;
+@media (max-width: 1250px) {
+  h1 {
+    font-size: 70px;
+    margin-left: 20px;
+    color: #ad3b00;
+    font-family: 'Bangers', cursive;
+  }
+}
+
+@media (min-width: 1251px) {
+  .search-box {
+    margin-left: 560px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .search-box {
+    margin-left: 30px;
+  }
 }
 
 .search-box input {
@@ -81,21 +107,37 @@ ul {
   background-color: #242526;
   color: white;
   top: 50;
-  left: 230px;
+  left: 16%;
   height: 670px;
   width: 1000px;
   border-radius: 8px;
   overflow-y:auto;
 }
 
-h2 {
-  background-color: inherit;
-  font-family: 'Bangers', cursive;
-  font-size: 60px;
-  padding: 0px;
-  margin-top: 25px;
-  text-align: center;
-  margin-bottom: 0px;
+@media (min-width: 1251px) {
+  h2 {
+    background-color: inherit;
+    font-family: 'Bangers', cursive;
+    font-size: 60px;
+    padding: 0px;
+    margin-top: 25px;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 1250px) {
+  h2 {
+    background-color: inherit;
+    font-family: 'Bangers', cursive;
+    font-size: 60px;
+    padding: 0px;
+    margin-top: 25px;
+    text-align: center;
+    margin-bottom: 0px;
+    position: relative;
+    right: 30%;
+  }
 }
 
 #popup #columnleft, #columnright{
@@ -107,9 +149,21 @@ h2 {
   background-color: inherit;
 }
 
-#popup #columnright{
-  width: 35%;
-  background-color: inherit;
+@media (min-width: 1251px) {
+  #popup #columnright{
+    width: 35%;
+    background-color: inherit;
+  }
+}
+
+@media (max-width: 1250px) {
+  #popup #columnright{
+    width: 35%;
+    background-color: inherit;
+    position: relative;
+    left: -65%;
+    margin-top: 60%;
+  }
 }
 
 .search-results {
@@ -122,21 +176,62 @@ h2 {
 	right: 0;
 }
 
-#clearbutton {
-  margin-left: 910px;
-  background-color: inherit;
-  height: 20px;
-  width: 20px;
-  text-decoration: none;
-  border: none;
-  color: white;
-  position: relative;
-  top: -65px;
-  font-size: 30px;
-  font-family: 'Bangers', cursive;
+@media (min-width: 1251px) {
+  #clearbutton {
+    margin-left: 910px;
+    background-color: inherit;
+    height: 20px;
+    width: 20px;
+    text-decoration: none;
+    border: none;
+    color: white;
+    position: relative;
+    top: -65px;
+    font-size: 30px;
+    font-family: 'Bangers', cursive;
+  }
 }
 
-h3 {
+@media (max-width: 1250px) {
+  #clearbutton {
+    margin-right: 220px;
+    background-color: inherit;
+    height: 20px;
+    width: 20px;
+    text-decoration: none;
+    border: none;
+    color: white;
+    position: relative;
+    top: -65px;
+    font-size: 30px;
+    font-family: 'Bangers', cursive;
+  }
+}
+
+@media (min-width: 1251px) {
+  #columnleft h3 {
+    color: #ad3b00;
+    font-family: 'Bangers', cursive;
+    font-size: 40px;
+    margin-top: 0px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 1250px) {
+  #columnleft h3 {
+    color: #ad3b00;
+    font-family: 'Bangers', cursive;
+    font-size: 40px;
+    margin-top: 0px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 310px;
+  }
+}
+
+#columnright h3 {
   color: #ad3b00;
   font-family: 'Bangers', cursive;
   font-size: 40px;
@@ -154,7 +249,7 @@ h3 {
   list-style-type: none;
   text-align: left;
   position: relative;
-  left: 65px;
+  left: 10%;
 }
 
 #albumlist li {
@@ -198,7 +293,7 @@ p {
 
 #relatedartistlist {
   font-family: 'Playfair Display', serif;
-  left: 65px;
+  left: 60%;
   margin-top: 15px;
 }
 
@@ -232,20 +327,48 @@ h4 {
   color: black;
 }
 
-#footerleft {
-  float: left;
-  width: 35%;
-  background-color: inherit;
-  padding: 0px;
-  margin: 0px;
+@media (min-width: 1251px) {
+  #footerleft {
+    float: left;
+    width: 35%;
+    background-color: inherit;
+    padding: 0px;
+    margin: 0px;
+  }
 }
 
-#footerright {
-  float: left;
-  width: 60%;
-  background-color: inherit;
-  padding: 0px;
-  margin: 0px;
+@media (max-width: 1250px) {
+  #footerleft {
+    float: left;
+    width: 35%;
+    background-color: inherit;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    bottom: -1100px;
+  }
+}
+
+@media (min-width: 1251px) {
+  #footerright {
+    float: left;
+    width: 60%;
+    background-color: inherit;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+@media (max-width: 1250px) {
+  #footerright {
+    float: left;
+    width: 60%;
+    background-color: inherit;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    left: -20%;
+  }
 }
 
 #footer h1 {
@@ -267,8 +390,7 @@ h4 {
 
 #navigateus h2 {
   position: relative;
-  left: -20%;
-  //make these percentages
+  left: -40%;
 }
 
 #navigateus h3 {
@@ -284,12 +406,12 @@ h4 {
 
 #aboutus h2 {
   position: relative;
-  left: 20%;
+  left: 43%;
 }
 
 #aboutus h3 {
   position: relative;
-  left: 16%;
+  left: 30%;
   top: -10px;
   text-align: right;
 }
