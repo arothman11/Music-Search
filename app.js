@@ -1,4 +1,4 @@
-var apikey = "&apikey=ed3e1dd0dea45b0bd4469a41b8d1bbbc";
+var apikey = "&apikey=d556f2b60af7232aa1479556121325c8";
 var baseurl = "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/"
 var artistinput = "";
 
@@ -26,6 +26,7 @@ function doSearch(){
       };
 
       var artists = response.message.body.artist_list;
+      console.log("artists");
       for (i=0; i<artists.length; i++){
         SearchArtist(artists[i].artist);
       }
@@ -34,7 +35,7 @@ function doSearch(){
   artistinput = document.getElementById("form").value;
   document.getElementById("form").value = "";
   console.log(artistinput);
-  xhttp2.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.search?" + "q_artist=" + artistinput + "&apikey=ed3e1dd0dea45b0bd4469a41b8d1bbbc", true);
+  xhttp2.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.search?" + "q_artist=" + artistinput + "&apikey=d556f2b60af7232aa1479556121325c8", true);
   xhttp2.send();
 }
 
@@ -83,7 +84,7 @@ function getAlbums(artistid){
       }
     }
   }
-  xhttp2.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.albums.get?" + "artist_id=" + artistid + "&apikey=ed3e1dd0dea45b0bd4469a41b8d1bbbc", true);
+  xhttp2.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.albums.get?" + "artist_id=" + artistid + "&apikey=d556f2b60af7232aa1479556121325c8", true);
   xhttp2.send();
 }
 
@@ -127,7 +128,7 @@ function AlbumTracks(album){
         }
       }
     }
-    xhttp3.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/album.tracks.get?" + "album_id=" + album.album_id + "&apikey=ed3e1dd0dea45b0bd4469a41b8d1bbbc", true);
+    xhttp3.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/album.tracks.get?" + "album_id=" + album.album_id + "&apikey=d556f2b60af7232aa1479556121325c8", true);
     xhttp3.send();
   }
 }
@@ -146,7 +147,7 @@ function relatedArtists(artistid){
       }
     }
   }
-  xhttp3.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.related.get?" + "artist_id=" + artistid + "&apikey=ed3e1dd0dea45b0bd4469a41b8d1bbbc", true);
+  xhttp3.open("GET", "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.related.get?" + "artist_id=" + artistid + "&apikey=d556f2b60af7232aa1479556121325c8", true);
   xhttp3.send();
 }
 
